@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>美女图片</title>
+    <script src="../../js/jquery-3.1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <!--<script src="../../js/vue.js"></script>
+    <script src="beauty.js"></script>-->
+    <script src="../../js/vue.js"></script>
+    <script src="../../js/iscroll.min.js"></script>
+    <script type="text/javascript">
+        var vm;
+        var trigger = true;
+        $(function () {
+            vm = new Vue({
+                el: '#app',
+                data: {
+                    srcData: { items: [] }
+                },
+                created: function () {
+                    // `this` 指向 vm 实例
+                    this.GetData(1, 10);
+                },
+                methods: {
+                    GetData: function (page, pageSize) {
+                        if (page == undefined) {
+                            page = 1;
+                        }
+                        if (pageSize == undefined) {
+                            pageSize = 10;
+                        }
+                        var input = bif.getInput();
+                        input.channel = "Anno.Plugs.Logic";
+                        input.method = "BeautyPic";
+                        input.router = "Joke";
+                        input.page = page;
+                        input.page_size = pageSize;
+                        bif.process(input, function (data) {
+                            if (data.status) {
+                                if (vm.srcData.items.length === 0) {
+                                    vm.srcData = data.outputData;
+                                } else {
+                                    trigger = true;
+                                    vm.srcData.page = page;
+                                    data.outputData.items.forEach(item => {
+                                        vm.srcData.items.push(item);
+                                    });
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+            $(window).scroll(function () {
+                var that = $(this),
+                    vh = that.height(),
+                    ch = $(document.body).height(),
+                    sctop = that.scrollTop();
+                if ((ch - vh - sctop) <= 350 && trigger) {
+                    trigger = false;
+                    vm.GetData(++vm.srcData.page);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="app" style="width:100%;" >
+        <ul>
+            <li v-for="item in srcData.items">
+                <img style="width:100%; "  v-bind:src=item.wpic_middle />
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
