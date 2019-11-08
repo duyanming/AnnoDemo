@@ -146,7 +146,7 @@ function Save() {
     var manager = $("#grid").ligerGetGridManager();
     var gdata = manager.getData();
     var input = bif.gAnnonput();
-    input.channel = "dym.Plugs.Logic";
+    input.channel = "Anno.Plugs.Logic";
     input.router = "Platform";
     input.method = "SaveCurRoles";
     input.uid = args["_id"];
