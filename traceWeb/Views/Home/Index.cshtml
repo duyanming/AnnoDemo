@@ -13,12 +13,9 @@
 <script src="~/js/element-ui-index.js"></script>
 
 <div id="app" style="height:100%;">
-    <el-container style="height:100%;">
+    <el-container>
         <el-aside style="background-color:#545c64;" v-bind:style="{width:menumWidth}">
-            <el-radio-group v-model="isCollapse" v-bind:style="{width:menumWidth}" style=" height:60px; background-color:#108ee9;text-align:center;">
-                <img src="~/img/logo.jpg" v-on:click="changeisCollapse" style="width:58px;height:58px;border:2px; border-radius:22.5px;-moz-border-radius:25px; vertical-align:middle;" />
-            </el-radio-group>
-            <el-menu @@open="handleOpen" v-bind:style="{width:menumWidth}" @@close="handleClose" :collapse="isCollapse" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+            <el-menu @@open="handleOpen" @@close="handleClose" :collapse="isCollapse" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
                 <el-submenu v-for="item,index in menuroot" :index="item.id">
                     <template slot="title">
                         <i :class="item.icon"></i>
@@ -51,12 +48,12 @@
     Vue.component('el-menu-tree', {
         name: "el-menu-tree",
         template: "<div>"
-                       + '<el-menu-item  v-for="(subitem,iindex) in item.children" :index="subitem.id" @@click="vm.openMenuItem(subitem)" v-text="subitem.fname"></el-menu-item>'
-                        + ' <el-submenu v-for="(subitem,iindex) in item.childrenDir" :index="subitem.id">'
-                            + ' <span slot="title" v-text="subitem.fname"></span>'
-                            + ' <el-menu-tree :item="subitem"></el-menu-tree>'
-                         + '</el-submenu>'
-                     + '</div>',
+            + '<el-menu-item  v-for="(subitem,iindex) in item.children" :index="subitem.id" @@click="vm.openMenuItem(subitem)" v-text="subitem.fname"></el-menu-item>'
+            + ' <el-submenu v-for="(subitem,iindex) in item.childrenDir" :index="subitem.id">'
+            + ' <span slot="title" v-text="subitem.fname"></span>'
+            + ' <el-menu-tree :item="subitem"></el-menu-tree>'
+            + '</el-submenu>'
+            + '</div>',
         props: ["item"],
     });
     var vm = new Vue({
@@ -100,10 +97,10 @@
                 }
             },
             handleOpen: function (key, keyPath) {
-                console.log(key, keyPath);
+                //console.log(key, keyPath);
             },
             handleClose: function (key, keyPath) {
-                console.log(key, keyPath);
+                //console.log(key, keyPath);
             }, openMenuItem: function (item) {
                 var that = this;
                 that.iframeSrc = item.furl;
@@ -118,8 +115,8 @@
                 }
             },
             openUserCenter: function () {
-                  var that = this;
-                that.iframeSrc =  "/html/pcenter.html";
+                var that = this;
+                that.iframeSrc = "/html/pcenter.html";
             },
             getFunc: function () {
                 var that = this;
@@ -182,11 +179,18 @@
     .el-aside {
         background-color: #D3DCE6;
         color: #333;
+        overflow:hidden;
+        width:200px;
     }
-
+    .el-submenu__icon-arrow {
+    right:40px;
+    }
     .el-menu {
         border-right: solid 0px #e6e6e6;
-        /*width: 200px;*/
+        width: 220px;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x:hidden;
     }
 
     .el-container {
