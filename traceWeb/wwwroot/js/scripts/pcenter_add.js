@@ -13,6 +13,8 @@ var statusData = [
 function Load() {
     var input = bif.getInput();
     InitForm();
+    input.channel = "Anno.Plugs.Logic";
+    input.router = "Platform";
     input.method = "GetcurRoles";
     input.uid = -1;
     bif.process(input, function (data) {
