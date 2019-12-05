@@ -6,7 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Anno.Rpc.Server" Version="1.0.0" />
+    <PackageReference Include="Anno.Rpc.Server" Version="1.0.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Anno.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -222,7 +222,7 @@ function StartMonitoring() {
         var _date = new Date(_data.currentTime);
         date.push([_date.getHours(), _date.getMinutes(), _date.getSeconds()].join(':'));
         data.push(_data.cpu);
-        memorydata.push((_data.memory / 1024.00).toFixed(2));
+        memorydata.push((_data.memory).toFixed(2));
         if (data.length > 1200) {
             memorydata.shift();
             data.shift();
