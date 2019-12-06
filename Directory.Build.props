@@ -2,7 +2,7 @@
   <PropertyGroup>
     <DeveloperBuildCoreTfms>netcoreapp3.1</DeveloperBuildCoreTfms>
     <StandardTfms>netstandard2.0</StandardTfms>
-    <Version>1.1.2</Version>
+    <Version>1.0.1.3</Version>
     <ServerName>hostingService</ServerName>
   </PropertyGroup>
 </Project>
