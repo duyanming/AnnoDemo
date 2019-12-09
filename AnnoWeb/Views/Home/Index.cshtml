@@ -30,14 +30,16 @@
                 </el-menu>
             </el-aside>
             <el-main style="width:100%;height:100%;top:0px;left:0px;">
-                <el-header >
+                <el-header>
                     <div uInfo style="width:200px; float:right;">
                         <a style="cursor:pointer; text-decoration: underline; margin-left: 10px;" v-on:click="openUserCenter">{{profile.name}}({{profile.account}})</a>
                         <a style="cursor:pointer; text-decoration: underline; margin-left: 10px;" v-on:click="exitUser">退出</a>
                     </div>
                 </el-header>
-                <iframe frameborder="0" :src="iframeSrc" style="width:100%;height:89%;">
-                </iframe>
+                <el-container  v-loading="loading">
+                    <iframe id="context" frameborder="0" :src="iframeSrc" style="width:100%;height:89%;">
+                    </iframe>
+                </el-container>
             </el-main>
         </el-container>
     </el-container>
@@ -66,7 +68,8 @@
             menumWidth: "200px",
             profile: JSON.parse(localStorage.profile),
             menuroot: [],
-            iframeSrc: "html/welcome.html"
+            iframeSrc: "html/welcome.html",
+            loading: false
         }
         , created: function () {//用于数据初始化
             var that = this;
@@ -106,8 +109,20 @@
                 //console.log(key, keyPath);
             }, openMenuItem: function (item) {
                 var that = this;
+                that.loading = true;
                 that.iframeSrc = item.furl;
-                //console.log(item);
+                var iframe = document.getElementById("context");
+                if (iframe.attachEvent) { // 兼容IE写法
+                    iframe.attachEvent("onload", function () {
+                        // iframe加载完成后要进行的操作
+                        that.loading = false;
+                    })
+                } else {
+                    iframe.onload = function () {
+                        // iframe加载完成后要进行的操作
+                        that.loading = false;
+                    }
+                }
             },
             exitUser: function () {
                 if (confirm("确定退出？")) {
@@ -157,6 +172,7 @@
             }
         }
     });
+
 </script>
 <style>
     html, body {
@@ -178,6 +194,8 @@
         color: #333;
         left: 20px;
         line-height: 60px;
+        border-bottom: 1px solid #e6e6e6;
+        /*box-shadow: 0px 5px 2px rgba(0,21,41,.35);*/
     }
 
     .el-aside {
@@ -185,6 +203,7 @@
         color: #333;
         /*overflow: hidden;*/
         /*width:200px;*/
+        /*box-shadow: 2px 0 6px rgba(0,21,41,.35);*/
     }
 
     .el-submenu__icon-arrow {
@@ -202,10 +221,10 @@
     }
 
     .el-main {
-        background-color: #E9EEF3;
         color: #333;
         text-align: center;
         padding: 0 0;
+        /*margin-left: 8px;*/
     }
 </style>
 
