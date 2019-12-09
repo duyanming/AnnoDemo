@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hostingService", "hostingSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "registryCenter", "registryCenter\registryCenter.csproj", "{AC6E789D-B8D3-4278-9FA6-ECF3D12C2F89}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "traceWeb", "traceWeb\traceWeb.csproj", "{15F3B8C0-700D-4013-A2AF-1D4C18B578AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnnoWeb", "AnnoWeb\AnnoWeb.csproj", "{15F3B8C0-700D-4013-A2AF-1D4C18B578AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{B0F007E1-3A70-40D0-BBB4-29463DB72883}"
 EndProject
