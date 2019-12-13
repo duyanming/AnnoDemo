@@ -37,7 +37,7 @@
                     </div>
                 </el-header>
                 <el-container  v-loading="loading">
-                    <iframe id="context" frameborder="0" :src="iframeSrc" style="width:100%;height:89%;">
+                    <iframe id="context" frameborder="0" :src="iframeSrc" style="width:100%;height:calc(100% - 60px);">
                     </iframe>
                 </el-container>
             </el-main>
@@ -224,6 +224,7 @@
         color: #333;
         text-align: center;
         padding: 0 0;
+        overflow-y:hidden;
         /*margin-left: 8px;*/
     }
 </style>
