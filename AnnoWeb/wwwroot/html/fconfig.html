@@ -23,13 +23,15 @@
         }
 
         .l-form-buttons li {
-            display: inline-block;
             width: 22%;
-            min-width:70xp;
+            min-width: 70xp;
+            display: -webkit-flex;
+            display: flex;
         }
-         .l-form-buttons li div {
-              margin: 0 auto;
-        }
+        .l-form-buttons li div {
+                margin: 0 auto;
+            }
+
     </style>
     <script type="text/javascript">
         var Tree;
@@ -55,14 +57,18 @@
                         <div id="funTree" style="margin: 0; padding: 0">
                         </div>
                     </div>
-                    <div id="divedit" style="float: right; width: 600px; height: 450px; background-color: #B2C4CE;
-                            display: none;">
+                    <div id="divedit" style="        float: right;
+        width: 600px;
+        height: 450px;
+        background-color: #B2C4CE;
+        display: none;
+">
                     </div>
                 </div>
 
             </div>
         </div>
-        <div class="l-layout-right" style="width: 30%; top: 1px;right:1px;">
+        <div class="l-layout-right" style="width: 30%;min-width:250px; top: 1px;right:1px;">
             <div position="right" class="l-layout-content">
                 <div id="form">
 
