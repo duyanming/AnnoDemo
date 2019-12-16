@@ -23,8 +23,8 @@ function BuildGrid() {
                     return '<a href="' + url + rowdata.ID + '&model=' + input.model + '&code=' + input.code + '&funcId=' + input.funcId+ '">详细</a>';
                 }, frozen: true
             },
-            { display: '单证号码', width: 200, name: 'SNUM', type: "text", frozen: true },
-            { display: '来源订单号', width: 200, name: 'CMSNUM', type: "text", frozen: true },
+            { display: '单证号码', width: 150, name: 'SNUM', type: "text", frozen: true },
+            { display: '来源订单号', width: 150, name: 'CMSNUM', type: "text", frozen: true },
             { display: '流水号', width: 100, name: 'BSNUM', type: "text", frozen: true },
             { display: '制单日期', width: 200, name: 'EDT', type: "date" },
             { display: '单证状态', width: 100, name: 'STATE_ENUM', type: "text"},
