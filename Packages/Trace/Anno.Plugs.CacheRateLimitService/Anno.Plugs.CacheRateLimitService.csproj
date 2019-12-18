@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anno.EngineData.Cache" Version="1.0.1.5" />
+    <PackageReference Include="Anno.EngineData.RateLimit" Version="1.0.1.5" />
+  </ItemGroup>
+
+</Project>

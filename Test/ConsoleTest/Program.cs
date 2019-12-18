@@ -9,12 +9,18 @@ namespace ConsoleTest
     {
         public static async Task Main(string[] args)
         {
+            //HostDemo();
+            new RpcTest().Handle();
+        }
+
+        public static async Task HostDemo()
+        {
             var builder = Host.CreateDefaultBuilder()
-                .ConfigureServices((hostContext, services) =>
-                {
-                    services.AddHostedService<MyServiceA>();
-                    services.AddHostedService<MyServiceB>();
-                });
+                    .ConfigureServices((hostContext, services) =>
+                    {
+                        services.AddHostedService<MyServiceA>();
+                        services.AddHostedService<MyServiceB>();
+                    });
 
             await builder.RunConsoleAsync(options =>
             {

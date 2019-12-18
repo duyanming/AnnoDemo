@@ -10,6 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Packages\Trace\Anno.Plugs.CacheRateLimitService\Anno.Plugs.CacheRateLimitService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Anno.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -26,6 +26,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTest", "Test\XUnitTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "Test\ConsoleTest\ConsoleTest.csproj", "{C4A429DE-4086-4F48-977E-F2D898645964}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anno.Plugs.CacheRateLimitService", "Packages\Trace\Anno.Plugs.CacheRateLimitService\Anno.Plugs.CacheRateLimitService.csproj", "{AF1CDD0D-E3F0-49C4-89D5-9C977C8D79AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{C4A429DE-4086-4F48-977E-F2D898645964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4A429DE-4086-4F48-977E-F2D898645964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A429DE-4086-4F48-977E-F2D898645964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1CDD0D-E3F0-49C4-89D5-9C977C8D79AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1CDD0D-E3F0-49C4-89D5-9C977C8D79AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1CDD0D-E3F0-49C4-89D5-9C977C8D79AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1CDD0D-E3F0-49C4-89D5-9C977C8D79AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{1BEECF42-7A99-4121-9D1C-8223CAF12224} = {E5F1CE48-7EA5-4EC2-8E0D-1F8161D05F9B}
 		{685F12DA-E8B0-4F7D-B2FA-020E8BF88557} = {B1B9595A-946B-4BAB-B8DE-357525B2B9C7}
 		{C4A429DE-4086-4F48-977E-F2D898645964} = {B1B9595A-946B-4BAB-B8DE-357525B2B9C7}
+		{AF1CDD0D-E3F0-49C4-89D5-9C977C8D79AA} = {E5F1CE48-7EA5-4EC2-8E0D-1F8161D05F9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {314AAF0F-FB08-4E53-AB50-D91AD88F1B5D}
