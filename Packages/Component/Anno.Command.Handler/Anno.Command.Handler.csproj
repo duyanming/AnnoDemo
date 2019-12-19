@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(StandardTfms)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anno.EngineData" Version="1.0.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anno.Command\Anno.Command.csproj" />
+    <ProjectReference Include="..\Anno.Domain\Anno.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -17,3 +17,8 @@
 /AnnoDemo.sln.DotSettings.user
 /.vs/AnnoDemo/DesignTimeBuild
 /.vs/AnnoDemo/v16
+/*/*/*/*/obj
+/*/*/*/*/bin
+/.vs/AnnoDemo/config/applicationhost.config
+/.vs/AnnoTrace/DesignTimeBuild/.dtbcache
+/AnnoWeb/.config/dotnet-tools.json

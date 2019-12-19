@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(StandardTfms)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Partial\" />
+  </ItemGroup>
+
+</Project>

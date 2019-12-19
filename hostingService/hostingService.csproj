@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Packages\Anno.Plugs.DLockService\Anno.Plugs.DLockService.csproj" />
+    <ProjectReference Include="..\Packages\Anno.Plugs.EsLogService\Anno.Plugs.EsLogService.csproj" />
+    <ProjectReference Include="..\Packages\Anno.Plugs.SerialRuleService\Anno.Plugs.SerialRuleService.csproj" />
+    <ProjectReference Include="..\Packages\Component\Service\Anno.Plugs.LogicService\Anno.Plugs.LogicService.csproj" />
+    <ProjectReference Include="..\Packages\Component\Service\Anno.Plugs.TraceService\Anno.Plugs.TraceService.csproj" />
+    <ProjectReference Include="..\Packages\Report\Anno.Plugs.ReportService\Anno.Plugs.ReportService.csproj" />
     <ProjectReference Include="..\Packages\Trace\Anno.Plugs.CacheRateLimitService\Anno.Plugs.CacheRateLimitService.csproj" />
   </ItemGroup>
 

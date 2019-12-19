@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(StandardTfms)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\Anno.Common\Anno.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Common\Anno.Npoi\Anno.Npoi.csproj" />
+    <ProjectReference Include="..\..\..\..\Common\Anno.Redis\Anno.Redis.csproj" />
+    <ProjectReference Include="..\..\Anno.Command\Anno.Command.csproj" />
+    <ProjectReference Include="..\..\Anno.Domain.Dto\Anno.Domain.Dto.csproj" />
+    <ProjectReference Include="..\..\Anno.Repository\Anno.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,9 +1,10 @@
-﻿using System;
-using Anno.EngineData;
+﻿using Anno.EngineData;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Anno.Plugs.TraceService
+namespace Anno.Repository
 {
-    [DependsOn()]
     public class Bootstrap : IPlugsConfigurationBootstrap
     {
         public void ConfigurationBootstrap()

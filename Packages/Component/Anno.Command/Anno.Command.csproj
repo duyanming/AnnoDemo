@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(StandardTfms)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Anno.CommandBus\Anno.CommandBus.csproj" />
+    <ProjectReference Include="..\Anno.Domain.Dto\Anno.Domain.Dto.csproj" />
+  </ItemGroup>
+
+</Project>

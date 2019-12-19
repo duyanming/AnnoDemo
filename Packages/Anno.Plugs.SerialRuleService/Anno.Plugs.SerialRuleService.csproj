@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>$(StandardTfms);net461</TargetFrameworks>
+    <AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anno.EngineData" Version="1.0.1.4" />
+    <PackageReference Include="Anno.SerialRule" Version="1.0.0" />
+    <PackageReference Include="MailKit" Version="2.3.1.6" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set plugsName=SerialRule&#xD;&#xA;set source=$(ProjectDir)bin\$(ConfigurationName)\$(StandardTfms)&#xD;&#xA;set targat=$(SolutionDir)$(ServerName)\bin\$(ConfigurationName)\$(DeveloperBuildCoreTfms)\Packages\Anno.Plugs.%25plugsName%25&#xD;&#xA;&#xD;&#xA;if exist %25targat%25 (     &#xD;&#xA;    rem 覆盖      &#xD;&#xA;) else (  &#xD;&#xA;        rem 创建        &#xD;&#xA;        md %25targat%25  &#xD;&#xA;    ) &#xD;&#xA;echo &quot;开始复制&quot;&#xD;&#xA;echo %25source%25&#xD;&#xA;echo %25targat%25&#xD;&#xA;xcopy /Y %25source%25  %25targat%25" />
+  </Target>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <Reference Include="System" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(StandardTfms)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anno.Log" Version="1.0.1.4" />
+    <PackageReference Include="DotNetCore.NPOI" Version="1.2.1" />
+  </ItemGroup>
+
+</Project>
