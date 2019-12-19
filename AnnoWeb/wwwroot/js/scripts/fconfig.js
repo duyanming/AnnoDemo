@@ -98,6 +98,8 @@ function f_add(type) {
         return false;
     }
     var input = bif.getInput();
+    input.channel = "Anno.Plugs.Logic";
+    input.router = "Platform";
     input.method = "EditFunc";
     input.type = type;
     var _formdata = form.getData();
@@ -130,6 +132,8 @@ function f_del() {
     var input = bif.getInput();
     $.ligerDialog.confirm('确定删除？', function (confirm) {
         if (confirm) {
+            input.channel = "Anno.Plugs.Logic";
+            input.router = "Platform";
             input.method = "EditFunc";
             input.type = 3;
 

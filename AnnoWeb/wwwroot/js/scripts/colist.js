@@ -62,6 +62,8 @@ function BuildGrid() {
 function EditState(uid, state) {
     return false;//公司列表未实现
     var input = bif.getInput();
+    input.channel = "Anno.Plugs.Logic";
+    input.router = "Platform";
     input.method = "ReSetpwd";
     input.uid = uid;
     input.state = (state == false);
