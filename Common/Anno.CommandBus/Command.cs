@@ -49,6 +49,11 @@ namespace Anno.CommandBus
                         }
                         try
                         {
+                            if (value == null)
+                            {
+                                targetProp.SetValue(this, null, null);
+                                continue;
+                            }
                             Type[] types = targetProp.PropertyType.GenericTypeArguments;
                             if (types.Length > 0)
                             {

@@ -117,6 +117,11 @@ namespace Anno.Domain.BaseModel
                         if (op != null)
                         {
                             var value = op.GetValue(objSource);
+                            if (value == null)
+                            {
+                                targetProp.SetValue(target, null, null);
+                                continue;
+                            }
                             Type[] types = targetProp.PropertyType.GenericTypeArguments;
                             if (types.Length > 0)
                             {
@@ -201,6 +206,11 @@ namespace Anno.Domain.BaseModel
                         }
                         try
                         {
+                            if (value == null)
+                            {
+                                targetProp.SetValue(this, null, null);
+                                continue;
+                            }
                             Type[] types = targetProp.PropertyType.GenericTypeArguments;
                             if (types.Length > 0)
                             {

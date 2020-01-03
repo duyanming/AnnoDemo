@@ -69,6 +69,10 @@ namespace Anno.Repository
                                         }
                                     }
                                 }
+                                else
+                                {
+                                    targetProp.SetValue(obj, null, null);
+                                }
                             }
                         }
                         catch
