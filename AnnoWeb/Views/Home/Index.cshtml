@@ -31,11 +31,11 @@
             </el-aside>
             <el-main style="width:100%;height:100%;top:0px;left:0px;">
                 <el-header>
-                    <div v-on:click="changeisCollapse" style="width: 50px; float: left; cursor: pointer;">
+                    <div v-on:click="changeisCollapse" style="width: 1px; float: left; cursor: pointer;">
                         <i :class="{'el-icon-s-fold':isCollapse==false,'el-icon-s-unfold':isCollapse}"></i>
                     </div>
-                    <div uInfo style="width: 200px; float: right;">
-                        <a style="cursor: pointer; text-decoration: underline; margin-left: 10px;" v-on:click="openUserCenter">{{profile.name}}({{profile.account}})</a>
+                    <div uInfo style="width: 150px; float: right;">
+                        <a style="cursor: pointer; text-decoration: underline; " v-on:click="openUserCenter">{{profile.name}}({{profile.account}})</a>
                         <a style="cursor: pointer; text-decoration: underline; margin-left: 10px;" v-on:click="exitUser">退出</a>
                     </div>
                 </el-header>
@@ -98,7 +98,7 @@
         methods: {
             changeisCollapse: function () {
                 var that = this;
-                that.isCollapse = (that.isCollapse == false)
+                that.isCollapse = (that.isCollapse == false);
                 if (that.isCollapse === true) {
                     that.menumWidth = "64px";
                 } else {
