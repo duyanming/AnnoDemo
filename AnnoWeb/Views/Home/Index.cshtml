@@ -112,6 +112,9 @@
                 //console.log(key, keyPath);
             }, openMenuItem: function (item) {
                 var that = this;
+                if (that.iframeSrc === item.furl) {
+                    return;
+                }
                 that.loading = true;
                 that.iframeSrc = item.furl;
                 var iframe = document.getElementById("context");
