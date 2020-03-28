@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Anno.EngineData" Version="1.0.1.4" />
+    <PackageReference Include="Anno.EngineData" Version="1.0.1.5" />
     <PackageReference Include="Anno.SerialRule" Version="1.0.0" />
-    <PackageReference Include="MailKit" Version="2.3.1.6" />
+    <PackageReference Include="MailKit" Version="2.5.2" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

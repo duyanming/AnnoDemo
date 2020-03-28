@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Anno.Rpc.Client" Version="1.0.1.4" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
+    <PackageReference Include="Anno.Rpc.Client" Version="1.0.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
   </ItemGroup>
 
 </Project>
