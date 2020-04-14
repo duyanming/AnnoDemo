@@ -19,6 +19,8 @@ namespace Microsoft.AspNetCore
     using System.Collections.Concurrent;
     using Anno.CronNET;
 
+    using NetTools;
+
     /// <summary>
     /// 接入服务中心的HostBuilder中间件
     /// </summary>
@@ -202,7 +204,7 @@ namespace Microsoft.AspNetCore
             bool limit = false;
             if (traceConfig.Limit.Enable)
             {
-                var ip = httpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+                var ip = httpContext.Connection.RemoteIpAddress.MapToIPv4();
 
                 #region IpLimit
                 if (traceConfig.Limit.IpLimit != null)
@@ -215,7 +217,7 @@ namespace Microsoft.AspNetCore
                     {
                         return false;
                     }
-                    _rateLimitPool.TryGetValue(ip, out LimitInfo limitInfo);
+                    _rateLimitPool.TryGetValue(ip.ToString(), out LimitInfo limitInfo);
                     if (limitInfo == null)
                     {
                         Iplimit iplimit = traceConfig.Limit.IpLimit;
@@ -223,12 +225,12 @@ namespace Microsoft.AspNetCore
                               , LimitingType.LeakageBucket
                               , (int)traceConfig.Limit.IpLimit.rps
                               , (int)traceConfig.Limit.IpLimit.limitSize);
-                        limitInfo =new LimitInfo()
+                        limitInfo = new LimitInfo()
                         {
                             Time = DateTime.Now,
                             limitingService = limitingService
                         };
-                        _rateLimitPool.TryAdd(ip, limitInfo);
+                        _rateLimitPool.TryAdd(ip.ToString(), limitInfo);
                     }
                     //ipLimit.Request() ==true 代表不受限制
                     limitInfo.Time = DateTime.Now;
@@ -238,7 +240,7 @@ namespace Microsoft.AspNetCore
 #if DEBUG
                         Console.WriteLine($"IP:{ip},Trigger current limiting.");
 #endif
-                        return limit;
+                        return true;
                     }
                 }
                 #endregion
@@ -272,7 +274,7 @@ namespace Microsoft.AspNetCore
 #if DEBUG
                         Console.WriteLine($"Tag:{taglimit.channel}.{taglimit.router},Trigger current limiting.");
 #endif
-                        return limit;
+                        return true;
                     }
                 }
                 #endregion
@@ -285,34 +287,32 @@ namespace Microsoft.AspNetCore
         /// </summary>
         /// <param name="ip"></param>
         /// <returns></returns>
-        private bool IsBlackRateLimit(string ip)
+        private bool IsBlackRateLimit(System.Net.IPAddress ip)
         {
-            bool limit = false;
-            foreach (var b in traceConfig.Limit.Black)
+            foreach (var range in traceConfig.Limit.PolicyBlack)
             {
-                if (ip.IndexOf(b) > -1)
+                if (range.Contains(ip))
                 {
                     return true;
                 }
             }
-            return limit;
+            return false;
         }
         /// <summary>
         /// Is 白名单限流策略
         /// </summary>
         /// <param name="ip"></param>
         /// <returns></returns>
-        private bool IsWhiteRateLimit(string ip)
+        private bool IsWhiteRateLimit(System.Net.IPAddress ip)
         {
-            bool limit = false;
-            foreach (var w in traceConfig.Limit.White)
+            foreach (var range in traceConfig.Limit.PolicyWhite)
             {
-                if (ip.IndexOf(w) > -1)
+                if (range.Contains(ip))
                 {
                     return true;
                 }
             }
-            return limit;
+            return false;
         }
         private Taglimit GetTag(HttpContext httpContext)
         {
