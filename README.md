@@ -167,7 +167,7 @@ namespace Anno.Plugs.CacheRateLimitService
 
  ``` 
 
- ### 4.2 缓存中间件
+ ### 4.2 限流中间件
 #### nuget install
 
 ```shell
