@@ -34,7 +34,7 @@
                     <div v-on:click="changeisCollapse" style="width: 1px; float: left; cursor: pointer;">
                         <i :class="{'el-icon-s-fold':isCollapse==false,'el-icon-s-unfold':isCollapse}"></i>
                     </div>
-                    <div uInfo style="width: 150px;height:60px; float: right;">
+                    <div uInfo style="height:60px; float: right;">
                         <a style="cursor: pointer; text-decoration: underline; " v-on:click="openUserCenter">{{profile.name}}({{profile.account}})</a>
                         <a style="cursor: pointer; text-decoration: underline; margin-left: 3px;" v-on:click="exitUser">退出</a>
                     </div>

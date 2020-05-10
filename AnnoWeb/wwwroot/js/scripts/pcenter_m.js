@@ -145,7 +145,7 @@ function DelRoles() {
 function Save() {
     var manager = $("#grid").ligerGetGridManager();
     var gdata = manager.getData();
-    var input = bif.gAnnonput();
+    var input = bif.getInput();
     input.channel = "Anno.Plugs.Logic";
     input.router = "Platform";
     input.method = "SaveCurRoles";
