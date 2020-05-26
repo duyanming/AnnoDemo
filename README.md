@@ -1,6 +1,11 @@
 ﻿# AnnoDemo
     Anno 分布式开发框架 Demo
 
+##  [Java 实现 ](https://github.com/duyanming/anno.thrift-parent) : https://github.com/duyanming/anno.thrift-parent
+    
+##  [Demo 在线演示地址](http://140.143.207.244) :http://140.143.207.244
+    账号：anno
+    密码：123456
 # Anno 分布式开发框架
 
     Anno 是一个分布式开发框架，同时支持 .net core3.1 、.net frameworker4.6.1
