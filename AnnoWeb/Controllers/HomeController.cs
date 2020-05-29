@@ -16,5 +16,9 @@ namespace traceWeb.Controllers
         {
             return View();
         }
+        public IActionResult Simulation()
+        {
+            return View();
+        }
     }
 }
