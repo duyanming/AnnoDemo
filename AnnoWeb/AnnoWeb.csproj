@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Anno.RateLimit" Version="1.0.1.5" />
-    <PackageReference Include="Anno.Rpc.Server" Version="1.0.1.5" />
+    <PackageReference Include="Anno.Rpc.Server" Version="1.0.1.7" />
     <PackageReference Include="IPAddressRange" Version="4.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
