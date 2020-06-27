@@ -56,13 +56,17 @@
     Vue.component('el-menu-tree', {
         name: "el-menu-tree",
         template: "<div>"
-            + '<el-menu-item  v-for="(subitem,iindex) in item.children" :index="subitem.id" @@click="vm.openMenuItem(subitem)" v-text="subitem.fname"></el-menu-item>'
+            + ' <el-menu-item :class="subitem.icon"  v-for="(subitem,iindex) in item.children" :index="subitem.id" @@click="vm.openMenuItem(subitem)" v-text="subitem.fname">'
+            + ' </el-menu-item>'
             + ' <el-submenu v-for="(subitem,iindex) in item.childrenDir" :index="subitem.id">'
-            + ' <span slot="title" v-text="subitem.fname"></span>'
+            + ' <template slot="title">'
+            + '  <i :class="subitem.icon"></i>'
+            + ' <span slot="title">{{subitem.fname}}</span>'
+            +'  </template>'
             + ' <el-menu-tree :item="subitem"></el-menu-tree>'
             + '</el-submenu>'
             + '</div>',
-        props: ["item"],
+        props: ["item"]
     });
     var vm = new Vue({
         el: '#app',
