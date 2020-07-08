@@ -30,7 +30,7 @@ function BuildGrid(data) {
             { display: '管道', width: 200, name: 'Channel', type: "text" },
             { display: '请路由', width: 200, name: 'Router', type: "text" },
             { display: '方法', width: 200, name: 'Method', type: "text" },
-            { display: '描述', name: 'Desc', width: 250 }
+            { display: '描述', name: 'Desc', width: 300 }
         ],
         isScroll: false,
         frozen: false,
@@ -69,7 +69,6 @@ function showParameters(row, detailPanel, callback) {
         isScroll: false,
         showToggleColBtn: false,
         height: '400px',
-        width: '90%',
         data: getParametersData(row),
         showTitle: false,
         onAfterShowData: callback,
