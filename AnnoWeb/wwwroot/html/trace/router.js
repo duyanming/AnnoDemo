@@ -26,11 +26,11 @@ function BuildGrid(data) {
 
     grid = window.$('#grid').ligerGrid({
         columns: [
-            { display: '服务名称', width: 180, name: 'App', type: "text" },
+            { display: '服务名称', width: 150, name: 'App', type: "text" },
             { display: '管道', width: 200, name: 'Channel', type: "text" },
             { display: '请路由', width: 200, name: 'Router', type: "text" },
             { display: '方法', width: 200, name: 'Method', type: "text" },
-            { display: '描述', name: 'Desc', width: 280 }
+            { display: '描述', name: 'Desc', width: 270 }
         ],
         isScroll: false,
         frozen: false,
