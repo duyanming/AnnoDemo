@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿
 $(function () {
     var input = bif.getInput();
     input.channel = "Anno.Plugs.Report";

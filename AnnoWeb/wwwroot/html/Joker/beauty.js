@@ -1,6 +1,6 @@
 ﻿/// <reference path="../../js/scripts/base.js" />
 /// <reference path="../../js/vue.js" />
-/// <reference path="../../js/jquery-3.1.0.min.js" />
+/// <reference path="../../js/jquery.min.js" />
 $(function () {
     var input = bif.getInput();
     input.channel = "Anno.Plugs.Logic";

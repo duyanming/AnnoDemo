@@ -1,4 +1,4 @@
-﻿/// <reference path="../../js/jquery-3.1.0.min.js" />
+﻿/// <reference path="../../js/jquery.min.js" />
 /// <reference path="../../js/base.js" />
 $(function () {
     BuildGrid();

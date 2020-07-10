@@ -1,4 +1,4 @@
-﻿/// <reference path="../../js/jquery-3.1.0.min.js" />
+﻿/// <reference path="../../js/jquery.js" />
 /// <reference path="../../js/base.js" />
 var rlt = {};
 $(function () {
@@ -23,13 +23,17 @@ function LoadData() {
 }
 var grid = null;
 function BuildGrid(data) {
-
+    $.each(data.Rows,
+        function(i,item) {
+            item.ParameterCount = item.Value.Parameters.length;
+        });
     grid = window.$('#grid').ligerGrid({
         columns: [
             { display: '服务名称', width: 150, name: 'App', type: "text" },
             { display: '管道', width: 200, name: 'Channel', type: "text" },
             { display: '请路由', width: 200, name: 'Router', type: "text" },
-            { display: '方法', width: 200, name: 'Method', type: "text" },
+            { display: '方法', width: 150, name: 'Method', type: "text" },
+            { display: '参数个数', width: 110, name: 'ParameterCount', type: "number" },
             { display: '描述', name: 'Desc', width: 270 }
         ],
         isScroll: false,

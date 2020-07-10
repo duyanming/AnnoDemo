@@ -1,4 +1,4 @@
-﻿/// <reference path="../jquery-3.1.0.min.js" />
+﻿/// <reference path="../jquery.min.js" />
 /// <reference path="base.js" />
 
 $(function () {
