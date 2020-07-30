@@ -2,7 +2,7 @@
     Anno 分布式开发框架 Demo
 
 ##  [Java 实现 ](https://github.com/duyanming/anno.thrift-parent) : https://github.com/duyanming/anno.thrift-parent
-    
+
 ##  [Demo 在线演示地址](http://140.143.207.244) :http://140.143.207.244
     账号：anno
     密码：123456
@@ -11,25 +11,59 @@
     Anno 是一个分布式开发框架，同时支持 .net core3.1 、.net frameworker4.6.1
 
 ## 1、运行Demo
-    第一步：启动注册中心
-        进入项目文件夹 AnnoDemo\registryCenter\bin\Debug\netcoreapp3.1 ，运行命令 dotnet registryCenter.dll
-        看到下图 说明运行成功
-![第一步](./doc/center.png)
 
-    第二步：启动Server  
-        Server可以和 AppCenter 不在同一台电脑，也可以运行多个server 也可以负载均衡，高级用法随后介绍
-        进入项目文件夹 AAnnoDemo\hostingService\bin\Debug\netcoreapp3.1 ，运行命令 dotnet hostingService.dll
-        看到下图 说明 Server 成功运行 并且已经注册到 注册中心（APPCenter）运行成功
-![第二步](./doc/service.png)
+```
+第一步：启动注册中心
+```
+
+
+
+    进入项目文件夹 AnnoDemo\registryCenter\bin\Debug\netcoreapp3.1 
+    运行命令 dotnet registryCenter.dll
+    看到下图 说明运行成功
+![第一步](https://s1.ax1x.com/2020/07/30/anl5P1.png)
+
+```
+第二步：启动Server 
+```
+
+
+
+    Server可以和 AppCenter 不在同一台电脑，也可以运行多个server 也可以负载均衡，高级用法随后介绍
+    进入项目文件夹 AAnnoDemo\hostingService\bin\Debug\netcoreapp3.1 
+    运行命令 dotnet hostingService.dll
+    看到下图 说明 Server 成功运行 并且已经注册到 注册中心（APPCenter）运行成功
+![第二步](https://s1.ax1x.com/2020/07/30/anlh5R.png)
 
 启动AnnoWeb
 
     第三步：调用链追踪
+
+![第三步](https://s1.ax1x.com/2020/07/30/anlo26.png)
+
+```
+调用链详情
+```
+
+![第三步](https://s1.ax1x.com/2020/07/30/anlI8x.png)
+
+ 第四步：集群路由信息
+
+![第三步](https://s1.ax1x.com/2020/07/30/anGPsK.png)
+
+   ![第三步](https://s1.ax1x.com/2020/07/30/anGNzq.png)
+
+```
+调试邮件接口成功
+```
+
+![第三步](https://s1.ax1x.com/2020/07/30/anJipn.png)
+
+
+
+第五步：服务性能监控
        
-![第三步](./doc/trace.png)
-    第四步：服务性能监控
-       
-![第四步](./doc/web.png)
+![第四步](https://s1.ax1x.com/2020/07/30/anlHKO.png)
 
 
 
@@ -65,7 +99,7 @@
                 };
                 EventBus.Instance.SubscribeAll(funcs);
 
- ```  
+```
 
 ## 2、EventData配置
 
@@ -81,9 +115,9 @@
 	    }
 	}
 
- ```  
+```
 
- 
+
 ## 3、EventHandler配置
 
 ```c#
@@ -102,7 +136,7 @@
 	    }
 	}
 
- ```  
+```
 
  ```c#
 	
@@ -131,7 +165,7 @@
 	    }
 	}
 
- ```  
+ ```
 
 ## 4、中间件
 ### 4.1 缓存中间件
@@ -170,7 +204,7 @@ namespace Anno.Plugs.CacheRateLimitService
     }
 }
 
- ``` 
+ ```
 
  ### 4.2 限流中间件
 #### nuget install
@@ -208,7 +242,7 @@ namespace Anno.Plugs.CacheRateLimitService
     }
 }
 
- ``` 
+ ```
 
 
 
