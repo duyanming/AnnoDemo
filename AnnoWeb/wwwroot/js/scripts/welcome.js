@@ -1,4 +1,5 @@
-﻿
+﻿/// <reference path="../vue.min.js" />
+
 $(function () {
     var input = bif.getInput();
     input.channel = "Anno.Plugs.Report";
@@ -8,7 +9,6 @@ $(function () {
     //input.endDate = "2019-10-01";
     bif.process(input, function (data) {
         var myChart = echarts.init(document.getElementById('trace'));
-        var myChartPie = echarts.init(document.getElementById('tracePie'));
         // 指定图表的配置项和数据
         var option = {
             color: ['#3398DB'],
@@ -50,40 +50,8 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
-        var pieData = [];
-        if (data.outputData.xAxis) {
-            for (var i = 0; i < data.outputData.xAxis.length; i++) {
-                pieData.push({ value: data.outputData.values[i], name: data.outputData.xAxis[i]});
-            }
-        }
-        var optionPie = {
-          
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%)"
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left',
-                data: data.outputData.xAxis
-            },
-            series: [{
-                name: '访问量',
-                type: 'pie',
-                radius: '80%',
-                center: ['50%', '60%'],
-                data: pieData
-            }]
-        };
-        myChartPie.setOption(optionPie);
-
         defaultService = data.outputData.xAxis[0];
         myChart.on('click', function (params) {
-            if (params.name !== defaultService) {
-                SetWatch(connection, params.name);
-            }
-        });
-        myChartPie.on('click', function (params) {
             if (params.name !== defaultService) {
                 SetWatch(connection, params.name);
             }
@@ -93,6 +61,7 @@ $(function () {
     window.MemoryInt();
     window.StartMonitoring();
 });
+var vm = null;
 var defaultService = "WebApi";
 var data = [];
 var memorydata = [];
@@ -348,6 +317,7 @@ function StartMonitoring() {
                     data: memorydataSystem
                 }]
         });
+        vm.drives = _data.drives;
     });
     connection.on("OnConnected", function (_data) {
         SetWatch(connection, defaultService);
@@ -382,5 +352,22 @@ function SetWatch(connection, name) {
     });
     memoryChart.setOption({
         title: { left: 'center', text: name + '-Memory使用率' }
+    });
+    if (vm === null) {
+        Disk([]);
+    }
+    vm.name = defaultService;
+}
+
+
+function Disk(drives) {
+    vm = new Vue({
+        el: '#disk',
+        data: {
+            name: defaultService,
+            drives: drives
+        },methods: {
+          
+        }
     });
 }
