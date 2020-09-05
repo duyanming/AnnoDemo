@@ -21,11 +21,13 @@ font-size: 12px;border-bottom: solid 2px #ebebeb; font-weight:bold;
 * ------------- */
 
 /* 文本框、下来框、日期框、调整器都使用到这个 */
-.l-text
-{
-    position:relative; 
-    border:1px solid #D0D0D0;height: 28px; line-height:28px;
-    width:130px; 
+.l-text {
+    position: relative;
+    border: 1px solid #D0D0D0;
+    height: 28px;
+    line-height: 28px;
+    width: 130px;
+    border-radius:7px;
 }
 /* 文本框得到焦点的样式*/
 .l-text-focus
@@ -53,8 +55,12 @@ color: #999;
 } 
 /* 只读状态*/
 .l-text-readonly {
-	background: #f0f0f0;border-color:#ddd;
-    color: #999;margin:0;padding:0;
+    background: #f0f0f0;
+    border-color: #ddd;
+    color: #999;
+    margin: 0;
+    padding: 0;
+    border-radius: 7px;
 }
 
     .l-text-readonly .l-text-field {
@@ -164,6 +170,7 @@ background:#F0F0F0;
 .l-box-select-inner .l-box-select-table{margin:0; padding:0; width:100%; }
 .l-box-select .l-table-nocheckbox td:hover,.l-box-select .l-table-nocheckbox td.l-over{ background-color:#EEE; cursor:pointer;}
 
+/* ReSharper disable once InvalidValue */
 .l-box-select .l-table-nocheckbox .rowreadonly td:hover,.l-box-select .l-table-nocheckbox .rowreadonly td.l-over{ background-color:none; cursor:auto;}
 
 .l-box-select .l-table-nocheckbox td.l-selected{ background-color:#D2D2D2;}

@@ -7,6 +7,7 @@
 	position: relative;  text-align:center;
 	 border:1px solid #D3D3D3; color:#333333;
 	background:url('../images/ui/button.gif') repeat-x center center;
+    border-radius:7px;
 }
 
 .l-button-over,.l-button:hover {

@@ -29,12 +29,17 @@ function BuildGrid(data) {
         });
     grid = window.$('#grid').ligerGrid({
         columns: [
-            { display: '服务名称', width: 150, name: 'App', type: "text" },
+            {
+                display: '查看', name: '详细', width: 60, render: function (rowdata, rowindex, value) {
+                    return '<a href="javascript:openDetail(' + rowindex + ')">详细</a>';
+                }
+            },
+            { display: '服务名称', width: 120, name: 'App', type: "text" },
             { display: '管道', width: 200, name: 'Channel', type: "text" },
             { display: '请路由', width: 200, name: 'Router', type: "text" },
             { display: '方法', width: 150, name: 'Method', type: "text" },
             { display: '参数个数', width: 110, name: 'ParameterCount', type: "number" },
-            { display: '描述', name: 'Desc', width: 270 }
+            { display: '描述', name: 'Desc', width: 250 }
         ],
         isScroll: false,
         frozen: false,
@@ -81,3 +86,21 @@ function showParameters(row, detailPanel, callback) {
        
     });
 }
+
+function openDetail(index) {
+    var data = rlt.Rows[index];
+    $.ligerDialog.open({
+        height: 500,
+        width: 800,
+        title: '路由详情：'+data.Desc,
+        url: 'routerdetail.html',
+        showMax: false,
+        showToggle: true,
+        showMin: false,
+        isResize: true,
+        slide: false,
+        data:data
+        //自定义参数
+        //,myDataName: $("#txtValue").val()
+    });
+} 

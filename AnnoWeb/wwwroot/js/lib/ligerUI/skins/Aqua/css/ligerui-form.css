@@ -43,11 +43,14 @@ margin-left: 40px;
 * ------------- */
 .l-text-wrapper{ position:relative;}
 /* 文本框、下来框、日期框、调整器都使用到这个 */
-.l-text
-{
-    position:relative;
-    border:1px solid #AECAF0; height:20px; line-height:20px;
-    width:130px; background:white;
+.l-text {
+    position: relative;
+    border: 1px solid #AECAF0;
+    height: 20px;
+    line-height: 20px;
+    width: 130px;
+    background: white;
+    border-radius:7px;
 }
 /* 文本框 验证不通过 */
 .l-text-invalid{ border-color:#FF7777; background:#FFEEEE url(../images/common/invalid-line.gif) repeat-x bottom;}
@@ -84,11 +87,15 @@ margin-left: 40px;
     display:none; cursor:auto;
 }
 /* 表单文本框 input:text */
-.l-text-field
-{
-    position:absolute; top:0px; left:0px;
-    width:110px; 
-    border:0; margin:0; outline:none;
+.l-text-field {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 110px;
+    border: 0;
+    margin: 0;
+    outline: none;
+    border-radius: 7px;
 }
 
 .l-text-field-number {
