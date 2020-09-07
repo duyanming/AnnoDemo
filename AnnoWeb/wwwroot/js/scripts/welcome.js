@@ -364,6 +364,7 @@ function Disk(drives) {
     vm = new Vue({
         el: '#disk',
         data: {
+            isShow: true,
             name: defaultService,
             drives: drives
         },methods: {

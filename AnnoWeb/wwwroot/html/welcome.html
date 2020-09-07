@@ -25,6 +25,7 @@
 
             </div>
             <div id="disk" style="float: right; text-align: center; font-size: 13pt; height: 100%; width: 100%; height: 250px;">
+                <div v-show="isShow" style="display: none;"><b>{{name}}磁盘使用率</b></div>
                 <div v-for="d,index in drives" style="margin-top: 15px; margin-left: 15px; width: 46%; float: left;">
                     <el-progress 
                         v-show="d.total>0"
