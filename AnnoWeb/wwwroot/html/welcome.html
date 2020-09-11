@@ -5,8 +5,17 @@
     <title></title>
     <meta charset="utf-8" />
     <style>
-       div .el-progress-bar__outer {
+        div .el-progress-bar__outer {
             background: #4a65a5;
+        }
+
+        .driver {
+            margin-top: 15px;
+            margin-left: 15px;
+            width: -webkit-calc(46% - 15px);
+            width: -moz-calc(46% - 15px);
+            width: calc(46% - 15px);
+            float: left;
         }
     </style>
 </head>
@@ -26,15 +35,14 @@
             </div>
             <div id="disk" style="float: right; text-align: center; font-size: 13pt; height: 100%; width: 100%; height: 250px;">
                 <div v-show="isShow" style="display: none;"><b>{{name}}磁盘使用率</b></div>
-                <div v-for="d,index in drives" style="margin-top: 15px; margin-left: 15px; width: 46%; float: left;">
-                    <el-progress 
-                        v-show="d.total>0"
-                        :text-inside="true"
+                <div v-for="d,index in drives" class="driver">
+                    <el-progress v-show="d.total>0"
+                                 :text-inside="true"
                                  :stroke-width="26"
                                  :percentage="(((d.total-d.free)/d.total)*100).toFixed(2)">
 
                     </el-progress>
-                    <div  v-show="d.total>0" style="font-size: 8px; text-align: left; display: none;">{{d.name}} <b>{{d.free}}</b>GB可用, 共 <b>{{d.total}}</b>GB</div>
+                    <div v-show="d.total>0" style="font-size: 8px; text-align: left; display: none;">{{d.name}} <b>{{d.free}}</b>GB可用, 共 <b>{{d.total}}</b>GB</div>
                 </div>
             </div>
         </div>

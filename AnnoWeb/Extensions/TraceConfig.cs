@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using NetTools;
 
-namespace traceWeb
+namespace AnnoWeb
 {
     public class TraceConfig
     {

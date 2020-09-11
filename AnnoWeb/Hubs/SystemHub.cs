@@ -9,7 +9,7 @@ using Anno.EngineData.SysInfo;
 using Anno.EngineData;
 using Anno.Rpc.Client;
 
-namespace traceWeb.Hubs
+namespace AnnoWeb.Hubs
 {
     public class SystemHub : Hub
     {

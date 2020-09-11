@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace traceWeb
+namespace AnnoWeb
 {
     public class Startup
     {
