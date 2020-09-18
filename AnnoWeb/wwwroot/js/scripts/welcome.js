@@ -13,7 +13,8 @@ $(function () {
         var option = {
             color: ['#3398DB'],
             title: {
-                text: '最近7日追踪'
+                text: '最近7日追踪',
+                subtext: '点击Service对应的柱状图可切换监控'
             },
             tooltip: {
                 trigger: 'axis',
